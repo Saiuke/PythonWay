@@ -19,7 +19,6 @@ def div(valueA, valueB):
 
 # Calculator function
 
-
 def calculator():
     # Header
     print(
@@ -43,7 +42,7 @@ def calculator():
 
     if selectedOperation.isnumeric and int(selectedOperation) <= 4:
 
-        selectedOperation = int(selectedOperation)
+        selectedOperation = int(selectedOperation) #Convert the input to integer
 
         valueA = int(input("Enter the first value: "))
         valueB = int(input("Enter the second value: "))
@@ -68,5 +67,5 @@ def calculator():
     else:
         print(invalidInput)
 
-
+#Run the program, duh!
 calculator()
