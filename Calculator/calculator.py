@@ -5,17 +5,17 @@
 def add(valueA, valueB):
     return valueA + valueB
 
-
 def sub(valueA, valueB):
     return valueA - valueB
-
 
 def mult(valueA, valueB):
     return valueA * valueB
 
-
 def div(valueA, valueB):
     return valueA / valueB
+
+def pow(valueA, valueB):
+    return valueA ** valueB
 
 # Calculator function
 
@@ -34,13 +34,14 @@ def calculator():
         "2. Subtract\n"
         "3. Multiply\n"
         "4. Divide\n"
+        "5. Power\n"
     )
     # Error message
     invalidInput = "\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\nINVALID INPUT\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n"
 
-    selectedOperation = input("Selec operation from 1 to 4: ")
+    selectedOperation = input("Selec operation from 1 to 5: ")
 
-    if selectedOperation.isnumeric and int(selectedOperation) <= 4:
+    if selectedOperation.isnumeric and int(selectedOperation) <= 5:
 
         selectedOperation = int(selectedOperation) #Convert the input to integer
 
@@ -55,6 +56,8 @@ def calculator():
             print(valueA, " * ", valueB, " = ", mult(valueA, valueB))
         elif selectedOperation == 4:
             print(valueA, " / ", valueB, " = ", div(valueA, valueB))
+        elif selectedOperation == 5:
+            print(valueA, " ** ", valueB, " = ", pow(valueA, valueB))
         else:
             print(invalidInput)
 
