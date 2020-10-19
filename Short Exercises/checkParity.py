@@ -5,7 +5,6 @@ def checkParity(n):
         result = "The number " + str(n) + " is odd, as you are."
     print(result)
 
-
 print("Check the parity of a given integer:")
 number = input("Type the number to be evaluated: ")
 
