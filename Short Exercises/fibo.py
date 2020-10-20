@@ -8,5 +8,4 @@ def fibo(maximo):
         iteration += 1
     return output
 
-
 print(fibo(1000))
