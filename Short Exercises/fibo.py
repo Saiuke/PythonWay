@@ -1,11 +1,12 @@
-def fibo(max):
+def fibo(maximo):
     a, b = 0, 1
     output = []
-    exec = 0
-    while exec <= max:
+    iteration = 0
+    while iteration <= maximo:
         output.append(a)
-        a, b = b, b+a
-        exec += 1
+        a, b = b, b + a
+        iteration += 1
     return output
+
 
 print(fibo(1000))
