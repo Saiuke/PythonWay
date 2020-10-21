@@ -26,4 +26,20 @@ def sortParity(list):
     return [pairList, oddList]
 
 
+def getAverage(list):
+    sumaEl = 0
+    for el in list:
+        sumaEl += el
+    return (sumaEl / len(list))
+
+
+# Remove certain elements of a list
+def listChanger(list, remove):
+    for el in remove:
+        if el in list:
+            list.remove(el)
+    return list
+
 print(sortParity(list))
+print(getAverage(list))
+print(listChanger(list, [89, 52, 41, 10]))
