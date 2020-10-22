@@ -1,4 +1,4 @@
-# Manual implementation of a function that returns the GDC between 2 two integers
+# Returns the GDC of 2 two integers
 def findGCD(a, b):
     minNumber = a if a < b else b
     minNumber = minNumber * -1 #Ensures that minNumber is always positive, like you
