@@ -94,3 +94,16 @@ def sumList(list):
 
 
 print("A soma da lista é: ", sumList(novaLista))
+
+# The same can be accomplished using sum(list)
+print( sum(novaLista))
+
+########################################################################
+
+# Given a getSquare() function, make a list comprehension that returns a list with the squares of all even numbers from 0 to 20, but ignores those numbers that are divisible by 3.
+
+def ignoreDivisibles(list):
+    output = [x * x for x in list if (x % 3 != 0) and (x % 2 == 0)]
+    return output
+
+print(ignoreDivisibles(novaLista))
