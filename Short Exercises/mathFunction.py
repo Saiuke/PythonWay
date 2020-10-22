@@ -4,6 +4,7 @@ def findGCD(a, b):
     minNumber = minNumber if minNumber > 0 else minNumber * -1 #Ensures that minNumber is always positive, like you
     commonDivisors = [ x for x in range(2, minNumber + 1) if (a % x == 0) and (b % x == 0)]
     return max(commonDivisors) if len(commonDivisors) >= 1 else 1
+    # To get the MDC would suffice to substitute the max function to min
 
 print(findGCD(18, 81))
 print(findGCD(12, 4))
