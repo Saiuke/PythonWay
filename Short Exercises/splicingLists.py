@@ -1,4 +1,4 @@
-list = [10, 23, 45, 89, 52, 63, 98, 74, 41, 54]
+list = [10, 23, 47, 89, 52, 63, 98, 74, 41, 54]
 print(list[7:])
 list[2:5] = [88, 55, 44]
 print(list)
@@ -78,3 +78,13 @@ def oddsAndEvens(maxNumber):
     return [even, odds]
 
 print(oddsAndEvens(200))
+
+novaLista = [41, 53, 65, 45, 89, 91, 32, 21, 19, 11, 5, 77, 14]
+
+#Retorna a soma dos membros de uma lista
+def sumList(list):
+    sum = 0
+    [sum :=  sum + x for x in list]
+    return sum
+
+print("A soma da lista é: ", sumList(novaLista))
