@@ -44,7 +44,7 @@ def listChanger(list, remove):
 print(sortParity(list))
 print(getAverage(list))
 print(listChanger(list, [89, 52, 41, 10]))
-print([x * x for x in list])  # Calculate the square of each number in list
+print([x * x for x in list])  # Calculate the square of each number in a list
 
 
 def transposeMatrix(matrix):
