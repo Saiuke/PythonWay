@@ -58,3 +58,6 @@ def transposeMatrix(matrix):
 [print(row) for row in transposeMatrix(nestList)]
 
 # The same could be done using [[row[i] for row in matrix] for i in range(4)]
+
+#Fuck this shit, apparenly this following line does the same thing too
+[print(row) for row in zip(*nestList)]
