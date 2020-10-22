@@ -69,3 +69,10 @@ def calculateCube(list):
     return [x**3 for x in list]
 
 print(calculateCube(list))
+
+def oddsAndEvens(maxNumber):
+    odds = [x for x in range(maxNumber) if x % 2 != 0]
+    even = [x for x in range(maxNumber) if x % 2 == 0]
+    return [even, odds]
+
+print(oddsAndEvens(200))
