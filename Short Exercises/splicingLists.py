@@ -70,9 +70,11 @@ def calculateCube(list):
 
 print(calculateCube(list))
 
+#Writes all even and odd numbers there are <= given number
 def oddsAndEvens(maxNumber):
-    odds = [x for x in range(maxNumber) if x % 2 != 0]
-    even = [x for x in range(maxNumber) if x % 2 == 0]
+    odds = [x for x in range(maxNumber) if (x % 2 != 0)]
+    even = [x for x in range(maxNumber) if (x % 2 == 0)]
+    # The above line can also be done like this: [x for x in range(maxNumber) if (x not in odds)]
     return [even, odds]
 
 print(oddsAndEvens(200))
