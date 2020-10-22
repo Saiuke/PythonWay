@@ -43,3 +43,16 @@ def listChanger(list, remove):
 print(sortParity(list))
 print(getAverage(list))
 print(listChanger(list, [89, 52, 41, 10]))
+print([x*x for x in list]) #Calculate the square of each number in list
+
+def transposeMatrix(matrix):
+    matrixSize = len(matrix[0])
+    transposedMatrix = []
+    for i in range(matrixSize):
+        transposedRow = []
+        for row in matrix:
+            transposedRow.append(row[i])
+        transposedMatrix.append(transposedRow)
+    return transposedMatrix
+
+[print(row) for row in transposeMatrix(nestList)]
