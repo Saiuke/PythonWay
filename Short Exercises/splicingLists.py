@@ -56,3 +56,5 @@ def transposeMatrix(matrix):
     return transposedMatrix
 
 [print(row) for row in transposeMatrix(nestList)]
+
+# The same could be done using [[row[i] for row in matrix] for i in range(4)]
