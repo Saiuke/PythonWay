@@ -40,10 +40,12 @@ def listChanger(list, remove):
             list.remove(el)
     return list
 
+
 print(sortParity(list))
 print(getAverage(list))
 print(listChanger(list, [89, 52, 41, 10]))
-print([x*x for x in list]) #Calculate the square of each number in list
+print([x * x for x in list])  # Calculate the square of each number in list
+
 
 def transposeMatrix(matrix):
     matrixSize = len(matrix[0])
@@ -55,9 +57,10 @@ def transposeMatrix(matrix):
         transposedMatrix.append(transposedRow)
     return transposedMatrix
 
+
 [print(row) for row in transposeMatrix(nestList)]
 
 # The same could be done using [[row[i] for row in matrix] for i in range(4)]
 
-#Fuck this shit, apparenly this following line does the same thing too
+# Fuck this shit, apparently this following line does the same thing too
 [print(row) for row in zip(*nestList)]
