@@ -65,26 +65,32 @@ def transposeMatrix(matrix):
 # Fuck this shit, apparently this following line does the same thing too
 [print(row) for row in zip(*nestList)]
 
+
 def calculateCube(list):
-    return [x**3 for x in list]
+    return [x ** 3 for x in list]
+
 
 print(calculateCube(list))
 
-#Writes all even and odd numbers there are <= given number
+
+# Writes all even and odd numbers there are <= given number
 def oddsAndEvens(maxNumber):
     odds = [x for x in range(maxNumber) if (x % 2 != 0)]
     even = [x for x in range(maxNumber) if (x % 2 == 0)]
     # The above line can also be done like this: [x for x in range(maxNumber) if (x not in odds)]
     return [even, odds]
 
+
 print(oddsAndEvens(200))
 
 novaLista = [41, 53, 65, 45, 89, 91, 32, 21, 19, 11, 5, 77, 14]
 
-#Retorna a soma dos membros de uma lista
+
+# Retorna a soma dos membros de uma lista
 def sumList(list):
     sum = 0
-    [sum :=  sum + x for x in list]
+    [sum := sum + x for x in list]
     return sum
+
 
 print("A soma da lista é: ", sumList(novaLista))
