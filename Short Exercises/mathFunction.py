@@ -11,3 +11,14 @@ print(findGCD(12, 4))
 print(findGCD(1024, 512))
 print(findGCD(15, 2))
 print(findGCD(-18, 9))
+
+#################################################################################################################
+import math
+
+def calcFactorial(n):
+    if (n <= 1):
+        return 1
+    else:
+        return (n * calcFactorial(n-1))
+
+print('Factorial de 17: ', calcFactorial(6))
