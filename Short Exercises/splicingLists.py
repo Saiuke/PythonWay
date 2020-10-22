@@ -64,3 +64,8 @@ def transposeMatrix(matrix):
 
 # Fuck this shit, apparently this following line does the same thing too
 [print(row) for row in zip(*nestList)]
+
+def calculateCube(list):
+    return [x**3 for x in list]
+
+print(calculateCube(list))
