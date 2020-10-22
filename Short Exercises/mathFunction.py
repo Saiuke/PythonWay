@@ -1,7 +1,7 @@
 # Returns the GDC of 2 two integers
 def findGCD(a, b):
     minNumber = a if a < b else b
-    minNumber = minNumber * -1 #Ensures that minNumber is always positive, like you
+    minNumber = minNumber if minNumber > 0 else minNumber * -1 #Ensures that minNumber is always positive, like you
     commonDivisors = [ x for x in range(2, minNumber + 1) if (a % x == 0) and (b % x == 0)]
     return max(commonDivisors) if len(commonDivisors) >= 1 else 1
 
