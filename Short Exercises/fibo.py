@@ -1,3 +1,4 @@
+# Returns the Fibonacci sequence with 'maximo' members
 def fibo(maximo):
     a, b = 0, 1
     output = []
@@ -9,4 +10,14 @@ def fibo(maximo):
     return output
 
 
-print(fibo(1000))
+# Returns the nth number of a Fibonacci sequence
+
+def recursiveNfibo(n):
+    if n <= 1:
+        return n
+    else:
+        return (recursiveNfibo(n - 1) + recursiveNfibo(n - 2))
+
+
+print(fibo(10))
+print(recursiveNfibo(4))
