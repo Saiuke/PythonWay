@@ -3,4 +3,5 @@ def findString(string):
     b = string.find('ccc')
     return [a, b]
 
+
 print(findString('abbbabbblllllcccccaaacbbbghhyy'))

@@ -96,7 +96,8 @@ def sumList(list):
 print("A soma da lista é: ", sumList(novaLista))
 
 # The same can be accomplished using sum(list)
-print( sum(novaLista))
+print(sum(novaLista))
+
 
 ########################################################################
 
@@ -105,5 +106,6 @@ print( sum(novaLista))
 def ignoreDivisibles(list):
     output = [x * x for x in list if (x % 3 != 0) and (x % 2 == 0)]
     return output
+
 
 print(ignoreDivisibles(novaLista))
