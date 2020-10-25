@@ -32,4 +32,4 @@ def calcSum(n):
         return n + calcSum(n - 1)
 
 
-print('Sum of n numbers down to 17: ', calcSum(7))
+print('Sum of n numbers down to 17: ', calcSum(5))
