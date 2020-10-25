@@ -22,10 +22,11 @@ def recursiveFibo(n):
 def calcFibo(n):
     sequence = [0, 1]
     iteration = 0
-    while iteration <= n - 2: # The sequence already starts with 2 members
+    while iteration <= n - 2:  # The sequence already starts with 2 members
         sequence[0], sequence[1] = sequence[1], sequence[0] + sequence[1]
         iteration += 1
     return sequence[1]
+
 
 print(fibo(18))
 print(recursiveFibo(4))
