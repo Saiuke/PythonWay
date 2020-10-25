@@ -24,3 +24,12 @@ def calcFactorial(n):
 
 
 print('Factorial de 17: ', calcFactorial(6))
+
+def calcSum(n):
+    if n <= 1:
+        return n
+    else:
+        return n + calcSum(n - 1)
+
+
+print('Sum of n numbers down to 17: ', calcSum(7))
