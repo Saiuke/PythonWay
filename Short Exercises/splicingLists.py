@@ -181,8 +181,13 @@ print("Feito de maneira recursiva: ")
 print(sortList(listaTeste))
 
 outraLista = [4, 2, 3, 1]
+listaGrandona = [41, 53, 65, 45, 89, 91, 32, 21, 19, 11, 5, 77, 33, 4, 2, 3, 1, 10, 23, 47, 89, 52, 63, 98, 74, 41, 54,
+                 41, 53, 41, 45, 103, 91, 32, 14, 19, 11, 5, 77, 14]
 
 print("Troca as posições uma vez, verifica se está ordenado, se não, chama de novo: ")
 print(realSort(outraLista))
 
 # I just noticed the both do the same thing XD
+
+# print(sortList(listaGrandona))
+print(realSort(listaGrandona))
