@@ -82,6 +82,7 @@ def calculateCube(list):
 
 print(calculateCube(list))
 
+
 ##########################################################################
 
 # Writes all even and odd numbers there are <= given number
@@ -95,6 +96,7 @@ def oddsAndEvens(maxNumber):
 print(oddsAndEvens(200))
 
 novaLista = [41, 53, 65, 45, 89, 91, 32, 21, 19, 11, 5, 77, 14]
+
 
 ##########################################################################
 
@@ -110,6 +112,7 @@ print("A soma da lista é: ", sumList(novaLista))
 # The same can be accomplished using sum(list)
 print(sum(novaLista))
 
+
 ##########################################################################
 
 # Given a getSquare() function, make a list comprehension that returns a list with the squares of all even numbers from 0 to 20, but ignores those numbers that are divisible by 3.
@@ -120,6 +123,7 @@ def ignoreDivisibles(list):
 
 
 print(ignoreDivisibles(novaLista))
+
 
 ##########################################################################
 
@@ -133,24 +137,52 @@ def maxInList(list):
             print(maxNum)
     return maxNum
 
+
 print(maxInList(novaLista))
 
 ##########################################################################
 
 listaTeste = [4, 2, 3, 1]
 
-#Sort out list
+
+# Sort out list
+
+def isThisListOrdered(list):
+    listSize = len(list) - 1
+    isSorted = None
+    for i, el in enumerate(list):
+        if i < listSize:
+            if el > list[i + 1]:
+                isSorted = False
+                return isSorted
+            else:
+                isSorted = True
+    return isSorted
+
 
 def sortList(list):
-    listSize = len(list)
+    listSize = len(list) - 1
     for i, el in enumerate(list):
-            if i < listSize:
-                if el > list[i+1]:
-                    list.insert(i, list.pop(i+1))
-                    print(list)
+        if i < listSize:
+            if el > list[i + 1]:
+                list.insert(i, list.pop(i + 1))
+                print(list)
+                sortList(list)
     return list
 
-sortList(listaTeste)
+
+def realSort(list):
+    while isThisListOrdered(list) == False:
+        sortList(list)
+    return list
 
 
+print("Feito de maneira recursiva: ")
+print(sortList(listaTeste))
 
+outraLista = [4, 2, 3, 1]
+
+print("Troca as posições uma vez, verifica se está ordenado, se não, chama de novo: ")
+print(realSort(outraLista))
+
+# I just noticed the both do the same thing XD
