@@ -15,6 +15,8 @@ for item in nestList:
 print(nestList[-1:])
 
 
+##########################################################################
+
 def sortParity(list):
     pairList = []
     oddList = []
@@ -26,12 +28,16 @@ def sortParity(list):
     return [pairList, oddList]
 
 
+##########################################################################
+
 def getAverage(list):
     sumaEl = 0
     for el in list:
         sumaEl += el
     return (sumaEl / len(list))
 
+
+##########################################################################
 
 # Remove certain elements of a list
 def listChanger(list, remove):
@@ -47,6 +53,8 @@ print(listChanger(list, [89, 52, 41, 10]))
 print([x * x for x in list])  # Calculate the square of each number in a list
 
 
+##########################################################################
+
 def transposeMatrix(matrix):
     matrixSize = len(matrix[0])
     transposedMatrix = []
@@ -60,6 +68,8 @@ def transposeMatrix(matrix):
 
 [print(row) for row in transposeMatrix(nestList)]
 
+##########################################################################
+
 # The same could be done using [[row[i] for row in matrix] for i in range(4)]
 
 # Fuck this shit, apparently this following line does the same thing too
@@ -72,6 +82,7 @@ def calculateCube(list):
 
 print(calculateCube(list))
 
+##########################################################################
 
 # Writes all even and odd numbers there are <= given number
 def oddsAndEvens(maxNumber):
@@ -85,6 +96,7 @@ print(oddsAndEvens(200))
 
 novaLista = [41, 53, 65, 45, 89, 91, 32, 21, 19, 11, 5, 77, 14]
 
+##########################################################################
 
 # Retorna a soma dos membros de uma lista
 def sumList(list):
@@ -98,8 +110,7 @@ print("A soma da lista é: ", sumList(novaLista))
 # The same can be accomplished using sum(list)
 print(sum(novaLista))
 
-
-########################################################################
+##########################################################################
 
 # Given a getSquare() function, make a list comprehension that returns a list with the squares of all even numbers from 0 to 20, but ignores those numbers that are divisible by 3.
 
@@ -112,7 +123,7 @@ print(ignoreDivisibles(novaLista))
 
 ##########################################################################
 
-# Finds the greater number in a list (I know that's not the most efficient way
+# Finds the greater number in a list (I know that's not the most efficient way)
 
 def maxInList(list):
     maxNum = None;
@@ -123,5 +134,23 @@ def maxInList(list):
     return maxNum
 
 print(maxInList(novaLista))
+
+##########################################################################
+
+listaTeste = [4, 2, 3, 1]
+
+#Sort out list
+
+def sortList(list):
+    listSize = len(list)
+    for i, el in enumerate(list):
+            if i < listSize:
+                if el > list[i+1]:
+                    list.insert(i, list.pop(i+1))
+                    print(list)
+    return list
+
+sortList(listaTeste)
+
 
 
