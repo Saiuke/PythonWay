@@ -109,3 +109,19 @@ def ignoreDivisibles(list):
 
 
 print(ignoreDivisibles(novaLista))
+
+##########################################################################
+
+# Finds the greater number in a list (I know that's not the most efficient way
+
+def maxInList(list):
+    maxNum = None;
+    for el in list:
+        if (maxNum == None) or (maxNum < el):
+            maxNum = el
+            print(maxNum)
+    return maxNum
+
+print(maxInList(novaLista))
+
+
