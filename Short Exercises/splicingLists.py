@@ -161,13 +161,16 @@ def isThisListOrdered(list):
 
 
 def sortList(list):
+    isItOrdered = True
     listSize = len(list) - 1
     for i, el in enumerate(list):
         if i < listSize:
             if el > list[i + 1]:
+                isItOrdered = False
                 list.insert(i, list.pop(i + 1))
                 print(list)
-                sortList(list)
+    if(isItOrdered == False):
+        sortList(list)
     return list
 
 
@@ -190,4 +193,4 @@ print(realSort(outraLista))
 # I just noticed the both do the same thing XD
 
 # print(sortList(listaGrandona))
-print(realSort(listaGrandona))
+print(sortList(listaGrandona))
