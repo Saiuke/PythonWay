@@ -198,14 +198,16 @@ print(sortList(listaGrandona))
 
 ##########################################################################
 
+pequenaLista = [4, 2, 3, 1]
+
 # Invert a list
 
 def reverseList(list):
-    novaLista = []
     listSize = len(list) - 1
     for index, el in enumerate(list):
-        novaLista.insert(listSize - 1, el)
-    return novaLista
+        list.insert(listSize * -1, list.pop(index))
+    return list
 
+print("\n Lista invertida: \n")
 
-print(reverseList(listaTeste))
+print(reverseList(pequenaLista))
