@@ -194,3 +194,16 @@ print(realSort(outraLista))
 
 # print(sortList(listaGrandona))
 print(sortList(listaGrandona))
+
+##########################################################################
+
+# Invert a list
+
+def reverseList(list):
+    novaLista = []
+    listSize = len(list) - 1
+    for index, el in enumerate(list):
+        novaLista.insert(el)
+    return novaLista
+
+print(reverseList(listaTeste))
