@@ -169,7 +169,7 @@ def sortList(list):
                 isItOrdered = False
                 list.insert(i, list.pop(i + 1))
                 print(list)
-    if(isItOrdered == False):
+    if (isItOrdered == False):
         sortList(list)
     return list
 
@@ -195,6 +195,7 @@ print(realSort(outraLista))
 # print(sortList(listaGrandona))
 print(sortList(listaGrandona))
 
+
 ##########################################################################
 
 # Invert a list
@@ -203,7 +204,8 @@ def reverseList(list):
     novaLista = []
     listSize = len(list) - 1
     for index, el in enumerate(list):
-        novaLista.insert(el)
+        novaLista.insert(listSize - 1, el)
     return novaLista
+
 
 print(reverseList(listaTeste))
