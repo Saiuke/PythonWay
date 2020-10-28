@@ -211,3 +211,16 @@ def reverseList(list):
 print("\n Lista invertida: \n")
 
 print(reverseList(pequenaLista))
+
+#######################################################################
+# Checks if list has duplicates
+
+def hasDuplicates(list):
+    hayDuplicados = False
+    for a in list:
+        for b in list:
+            if a == b:
+                hayDuplicados = True
+    return hayDuplicados
+
+print(hasDuplicates(pequenaLista))
