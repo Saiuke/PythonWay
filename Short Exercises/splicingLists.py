@@ -218,9 +218,12 @@ print(reverseList(pequenaLista))
 def hasDuplicates(list):
     hayDuplicados = False
     for a in list:
+        foundDuplicates = 0
         for b in list:
             if a == b:
-                hayDuplicados = True
+                foundDuplicates += 1
+        if foundDuplicates > 1:
+            hayDuplicados = True
     return hayDuplicados
 
 print(hasDuplicates(pequenaLista))
