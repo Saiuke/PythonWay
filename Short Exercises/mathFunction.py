@@ -34,3 +34,16 @@ def calcSum(n):
 
 
 print('Sum of n numbers down to 17: ', calcSum(5))
+
+##############################################################################
+# This function receives a number (n) and returns all numbers less than it classified as odd or even
+
+def oddsAndEnds(n):
+    if(n > 0):
+        numList = [*range(n)]
+        numList.reverse()
+        print(numList)
+        for  num in numList:
+            print(num)
+
+oddsAndEnds(10)
