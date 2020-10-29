@@ -51,3 +51,15 @@ def oddsAndEnds(n):
 
 
 oddsAndEnds(10)
+
+
+def oddsAndEndsWhile(n):
+    while (n > 0):
+        if n % 2 == 0:
+            print("Even number: " + str(n))
+        else:
+            print("Odd number: " + str(n))
+        n = n - 1
+
+
+oddsAndEndsWhile(10)
