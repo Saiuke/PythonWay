@@ -1,0 +1,8 @@
+students = {
+    "Peter": {"age": 10, "address": "Lisbon"},
+    "Anne": {"age": 12, "address": "London"},
+    "Edgar": {"age": 15, "address": "Paris"},
+    "Allan": {"age": 18, "address": "Rio"},
+    "Caroline": {"age": 13, "address": "Las Vegas"},
+    "Samuel": {"age": 16, "address": "Lisbon"}
+}
