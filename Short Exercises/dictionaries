@@ -7,10 +7,12 @@ students = {
     "Samuel": {"age": 16, "address": "Lisbon"}
 }
 
+
 def printStudents(dic):
     for studentId, studentInfo in dic.items():
-            print("\n Person name: ", studentId)
-            for key in studentInfo:
-                print(key + ": ", studentInfo[key])
+        print("\n Person name: ", studentId)
+        for key in studentInfo:
+            print(key + ": ", studentInfo[key])
+
 
 printStudents(students)
