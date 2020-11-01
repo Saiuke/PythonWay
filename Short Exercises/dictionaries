@@ -19,6 +19,8 @@ printStudents(students)
 
 ####################################################################
 
-# This functions returns the size of a dictionary
+# This function returns the size of a dictionary
 
 print(len(students))
+print(list(students))
+print(students['Anne'])
