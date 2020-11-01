@@ -16,3 +16,9 @@ def printStudents(dic):
 
 
 printStudents(students)
+
+####################################################################
+
+# This functions returns the size of a dictionary
+
+print(len(students))
