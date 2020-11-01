@@ -28,8 +28,11 @@ print(students['Anne']['age'])
 print("Samuel" in students)
 print(reversed(students))
 
-# Soma de todas as idades das pessoas contidas no dicionary
+# Retorna a idade media das pessoas
 
-def sumOfAges(dic):
+def averageAge(dic):
+    length = len(dic)
+    allAges = sum([dic[i]['age'] for i in dic])
+    return allAges / length
 
-    return
+print(averageAge(students))
