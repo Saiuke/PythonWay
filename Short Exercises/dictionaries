@@ -27,3 +27,9 @@ print(students['Anne'])
 print(students['Anne']['age'])
 print("Samuel" in students)
 print(reversed(students))
+
+# Soma de todas as idades das pessoas contidas no dicionary
+
+def sumOfAges(dic):
+
+    return
