@@ -53,10 +53,8 @@ print(estudanteVelho(students))
 # Updates the ages of the students in n years
 
 def envelheceStudents(dic, n):
-    for studentName, studentData in dic:
-        for key in studentData:
-            if key == 'age':
-                key = key + n
+    for studentName in dic:
+        dic[studentName]['age'] = dic[studentName]['age'] + n
     return dic
 
 print(envelheceStudents(students, 3))
