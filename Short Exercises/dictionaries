@@ -42,4 +42,8 @@ print(averageAge(students))
 # Estudante mais velho
 
 def estudanteVelho(dic):
-    
+    nomes = list(dic.keys())
+    idades = list([dic[i]['age'] for i in dic])
+    return nomes[idades.index(max(idades))]
+
+print(estudanteVelho(students))
