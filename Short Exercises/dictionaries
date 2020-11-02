@@ -28,6 +28,7 @@ print(students['Anne']['age'])
 print("Samuel" in students)
 print(reversed(students))
 
+
 # Retorna a idade media das pessoas
 
 def averageAge(dic):
@@ -35,7 +36,9 @@ def averageAge(dic):
     allAges = sum([dic[i]['age'] for i in dic])
     return allAges / length
 
+
 print(averageAge(students))
+
 
 ####################################################################
 
@@ -46,7 +49,9 @@ def estudanteVelho(dic):
     idades = list([dic[i]['age'] for i in dic])
     return nomes[idades.index(max(idades))]
 
+
 print(estudanteVelho(students))
+
 
 ####################################################################
 
@@ -57,5 +62,5 @@ def envelheceStudents(dic, n):
         dic[studentName]['age'] = dic[studentName]['age'] + n
     return dic
 
-print(envelheceStudents(students, 3))
 
+print(envelheceStudents(students, 3))
