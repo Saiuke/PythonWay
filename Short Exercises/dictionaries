@@ -36,3 +36,10 @@ def averageAge(dic):
     return allAges / length
 
 print(averageAge(students))
+
+####################################################################
+
+# Estudante mais velho
+
+def estudanteVelho(dic):
+    
