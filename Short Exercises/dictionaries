@@ -47,3 +47,9 @@ def estudanteVelho(dic):
     return nomes[idades.index(max(idades))]
 
 print(estudanteVelho(students))
+
+####################################################################
+
+# Updates the ages of the students in n years
+
+
