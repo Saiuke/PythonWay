@@ -62,5 +62,13 @@ def envelheceStudents(dic, n):
         dic[studentName]['age'] = dic[studentName]['age'] + n
     return dic
 
-
 print(envelheceStudents(students, 3))
+
+####################################################################
+
+#Returns the lenght of a dictionary
+
+def returnLen(dic):
+    return (len(dic.keys()))
+
+print(returnLen(students))
