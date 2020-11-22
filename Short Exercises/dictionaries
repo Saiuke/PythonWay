@@ -2,8 +2,8 @@ students = {
     "Peter": {"age": 10, "address": "Lisbon"},
     "Anne": {"age": 12, "address": "London"},
     "Edgar": {"age": 15, "address": "Paris"},
-    "Allan": {"age": 18, "address": "Rio"},
-    "Caroline": {"age": 13, "address": "Las Vegas"},
+    "Allan": {"age": 18, "address": "London"},
+    "Caroline": {"age": 13, "address": "Paris"},
     "Samuel": {"age": 16, "address": "Lisbon"}
 }
 
@@ -72,3 +72,13 @@ def returnLen(dic):
     return (len(dic.keys()))
 
 print(returnLen(students))
+
+####################################################################
+
+# Return all students that lives in a certain city
+
+def studentsByCity(dic, city):
+    selectedStudents = [i for i in dic.keys() if dic[i]['address'] == city]
+    return selectedStudents
+
+print(studentsByCity(students, 'London'))
