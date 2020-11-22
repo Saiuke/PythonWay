@@ -77,8 +77,20 @@ print(returnLen(students))
 
 # Return all students that lives in a certain city
 
+# My solution
+
 def studentsByCity(dic, city):
     selectedStudents = [i for i in dic.keys() if dic[i]['address'] == city]
     return selectedStudents
 
+#Proposed solution
+
+def find_students(address, students):
+  names = []
+  for key, value in students.items():
+    if value["address"] == address:
+      names.append(key)
+  return sorted(names)
+
 print(studentsByCity(students, 'London'))
+print(find_students('Lisbon', students))
