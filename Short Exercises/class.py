@@ -4,7 +4,13 @@ class Person:
         self.age = age
         self.address = address
 
-        def getData(self):
-            print("Name: " % self.name % "\n"
-                  "Age: " % self.age % "\n"
-                  "Address: " % self.address% "\n")
+    def getData(self):
+        print("Name: " + str(self.name) + "\n" +
+                "Age: " + str(self.age) + "\n" +
+                "Address: " + str(self.address) + "\n")
+
+a = Person("Sauron", 854, "Mordor")
+
+a.getData()
+
+print(a.address)
