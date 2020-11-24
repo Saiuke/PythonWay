@@ -14,3 +14,24 @@ a = Person("Sauron", 854, "Mordor")
 a.getData()
 
 print(a.address)
+
+class Rectangle:
+
+    def __init__(self, x, y, x2, y2):
+        self.x = x
+        self.y = y
+        self.x2 = x2
+        self.y2 = y2
+
+    def area(self):
+        sideA = self.x2 - self.x
+        sideB = self.y2 - self.y
+        return sideA * sideB
+
+    def cordinates(self):
+        return list(self.x, self.y, self.x2, self.y2)
+
+    def perimeter(self):
+        sideA = self.x2 - self.x
+        sideB = self.y2 - self.y
+        return 2 * (sideB) + 2 * (sideA)
