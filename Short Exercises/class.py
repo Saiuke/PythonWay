@@ -24,14 +24,20 @@ class Rectangle:
         self.y2 = y2
 
     def area(self):
-        sideA = self.x2 - self.x
-        sideB = self.y2 - self.y
+        sideA = self.x2 - self.x if self.x2 > self.x  else self.x - self.x2
+        sideB = self.y2 - self.y if self.y2 > self.y  else self.y - self.y2
         return sideA * sideB
 
-    def cordinates(self):
-        return list(self.x, self.y, self.x2, self.y2)
+    def coordinates(self):
+        return [self.x, self.y, self.x2, self.y2]
 
     def perimeter(self):
-        sideA = self.x2 - self.x
-        sideB = self.y2 - self.y
+        sideA = self.x2 - self.x if self.x2 > self.x else self.x - self.x2
+        sideB = self.y2 - self.y if self.y2 > self.y else self.y - self.y2
         return 2 * (sideB) + 2 * (sideA)
+
+rect = Rectangle(3, 9, 11, 3)
+
+print(rect.coordinates())
+print(rect.area())
+print(rect.perimeter())
