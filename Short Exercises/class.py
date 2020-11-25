@@ -40,10 +40,11 @@ class Rectangle:
 
     def __str__(self):
         return [self.x, self.y, self.x2, self.y2]
-    
+
 
 rect = Rectangle(3, 9, 11, 3)
 
 print(rect.coordinates())
 print(rect.area())
 print(rect.perimeter())
+print(rect)
