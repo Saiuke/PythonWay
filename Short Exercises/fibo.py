@@ -9,7 +9,6 @@ def fibo(maximo):
         iteration += 1
     return output
 
-
 # Returns the nth number of a Fibonacci sequence
 
 def recursiveFibo(n):

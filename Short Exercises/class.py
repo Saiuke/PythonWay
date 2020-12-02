@@ -39,7 +39,7 @@ class Rectangle:
         return 2 * (sideB) + 2 * (sideA)
 
     def __str__(self):
-        return [self.x, self.y, self.x2, self.y2]
+        return str([self.x, self.y, self.x2, self.y2])
 
 
 rect = Rectangle(3, 9, 11, 3)
