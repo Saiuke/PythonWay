@@ -48,3 +48,17 @@ print(rect.coordinates())
 print(rect.area())
 print(rect.perimeter())
 print(rect)
+
+class SalesPerson(Person):
+    def __init__(self, name, company, age, address):
+        Person.__init__(self, name, age, address)
+        self.company = company
+
+    def getData(self):
+        print("Name: " + str(self.name) + "\n" +
+              "Company: " + str(self.company) + "\n" +
+              "Age: " + str(self.age) + "\n" +
+              "Address: " + str(self.address) + "\n")
+
+laura = SalesPerson("Laura", "Wolkswagem", 22, "Bogota")
+laura.getData()
