@@ -86,5 +86,6 @@ class Carnivore(Mammal):
         print("I eat meat")
 
 lion = Carnivore("Lion")
+lion.printer()
 
 
