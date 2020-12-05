@@ -62,3 +62,10 @@ class SalesPerson(Person):
 
 laura = SalesPerson("Laura", "Wolkswagem", 22, "Bogota")
 laura.getData()
+
+class Animal():
+    def __init__(self, name, food, characteristic):
+        self.name = name
+        self.characteristic = characteristic
+        self.food = food
+        print("I'm a " + str(self.name) + ".")
