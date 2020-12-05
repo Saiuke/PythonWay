@@ -69,3 +69,19 @@ class Animal():
         self.characteristic = characteristic
         self.food = food
         print("I'm a " + str(self.name) + ".")
+
+
+class Mammal(Animal):
+    def __init__(self, name, food):
+        Animal.__init__(self,name,food, "warm blooded")
+        print("I'm warm blooded")
+
+
+class Carnivore(Mammal):
+    def __init__(self, name):
+        Mammal.__init__(self, name, "meat")
+        print("I eat meat")
+
+lion = Carnivore("Lion")
+
+
