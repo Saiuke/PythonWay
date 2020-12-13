@@ -83,6 +83,7 @@ class Carnivore(Mammal):
     def __init__(self, name):
         Mammal.__init__(self, name, "meat")
     def printer(self):
+        super().printer()
         print("I eat meat")
 
 lion = Carnivore("Lion")
