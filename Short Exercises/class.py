@@ -90,15 +90,14 @@ lion = Carnivore("Lion")
 lion.printer()
 
 class Square(Rectangle):
-    def __init__(self, x1, y1, length):
-        self.x1 = x1
-        self.y1 = y1
-        self.length = length
+    def __init__(self, x, y, length):
+        x2 = x + length
+        y2 = y + length
+        super().__init__(x, y, x2, y2)
 
-    def area(self):
-        return self.length * self.length
-
-newSquare = Square(3, 2, 4)
+newSquare = Square(3, 2, 7)
 print(newSquare.area())
+print(newSquare.perimeter())
+print(newSquare)
 
 
