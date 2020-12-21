@@ -45,3 +45,29 @@ class EvenRange:
 newEven = EvenRange(19)
 print(newEven.next())
 
+class DownZero():
+    def __init__(self, n):
+        self.n = n
+
+    def __iter__(self):
+        return self
+
+    def next(self):
+        downZeroList = []
+        if self.n == 0:
+            downZeroList.append(self.n)
+            return downZeroList
+        else:
+            while self.n > 0:
+                downZeroList.append(self.n)
+                self.n -= 1
+            downZeroList.append(self.n)
+            return downZeroList
+
+goDown = DownZero(2)
+print(goDown.next())
+
+
+
+
+
