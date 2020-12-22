@@ -8,10 +8,9 @@ print(next(lousaSuja))
 print(next(lousaSuja))
 print(list(myRange(3,19)))
 
-def yieldOdds(n):
-    for i in range(n):
+def yieldOdds(k):
+    for i in range(k):
         if i % 2 == 1:
             yield i
 
-for n in yieldOdds(33)
-    print(n)
+print(list(yieldOdds(19)))
