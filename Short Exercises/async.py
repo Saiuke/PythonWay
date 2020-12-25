@@ -8,18 +8,21 @@ async def square(x):
     return x * x
 
 
+###########################################################################
+
 # Create an event loop
 loop = asyncio.get_event_loop()
 
+async def whenDone(tasks):
+    for res in asyncio.as_completed(tasks):
+        print('Result: ', await res)
+
 # Run async function and wait for completion
-results = loop.run_until_complete(asyncio.gather(
+loop = asyncio.get_event_loop()
+loop.run_until_complete(whenDone([
     square(3),
     square(4),
     square(9),
     square(13)
-))
+]))
 
-print(results)
-
-# Close the loop
-loop.close()
