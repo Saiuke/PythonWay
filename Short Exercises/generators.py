@@ -3,6 +3,7 @@ def myRange(a, b):
         yield a
         a += 1
 
+
 lousaSuja = myRange(2,18)
 print(next(lousaSuja))
 print(next(lousaSuja))
@@ -13,4 +14,15 @@ def yieldOdds(k):
         if i % 2 == 1:
             yield i
 
+
 print(list(yieldOdds(19)))
+
+
+def downToZero(n):
+    for i in range(n, -1, -1):
+        yield i
+
+
+for i in downToZero(14):
+    print(i)
+
