@@ -7,11 +7,13 @@
 
 def make_chocolate(small, big, goal):
     totalBig = big * 5
-    smallNeeded = goal - totalBig
-    if goal < 5 and small >= goal:
-        return goal
-    if smallNeeded > small or totalBig > goal:
+    if totalBig + small < goal or small < goal % 5:
         return -1
+    smallNeeded = goal - totalBig
+    if smallNeeded < 0:  # Will happen when the goal is less than 5. For example in make_chocolate(4, 1, 4)
+        return smallNeeded % 5
     else:
         return smallNeeded
+
+
 
