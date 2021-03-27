@@ -1,11 +1,16 @@
-# Create a List maker
-
+########################################################################################################################
+# User Interface function - Collects inputs from the users and calls the relevant methods from the FractalLife class
+########################################################################################################################
 class FractalLife:
+
+    # ················································································································ #
+    # Constructor method - Receives the parameters needed to make everything works
+    # ················································································································ #
     def __init__(self, numGen: int, cellsPerGen: int, chosenSeed: int):
 
-        self.mainMatrix = []
-        self.numGen = numGen
-        self.cellsPerGen = cellsPerGen
+        self.mainMatrix = []  # Obviously this is the main matrix
+        self.numGen = numGen  # Quantity of iterations to be run
+        self.cellsPerGen = cellsPerGen  # How rows per line
         self.bookOfLife = [
             {'000': 0, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 0},
             {'000': 0, '001': 0, '010': 0, '011': 0, '100': 0, '101': 0, '110': 0, '111': 1},
@@ -263,61 +268,166 @@ class FractalLife:
             {'000': 1, '001': 1, '010': 1, '011': 1, '100': 1, '101': 1, '110': 0, '111': 1},
             {'000': 1, '001': 1, '010': 1, '011': 1, '100': 1, '101': 1, '110': 1, '111': 0},
             {'000': 1, '001': 1, '010': 1, '011': 1, '100': 1, '101': 1, '110': 1, '111': 1}
-        ]
-        self.ruleSet = self.bookOfLife[chosenSeed]
+        ]  # Set of all possible combinations of the rules
+        self.ruleSet = self.bookOfLife[chosenSeed]  # One specific rule from the rule book
 
+    # ················································································································ #
+    # Returns the actual instance of the class
+    # ················································································································ #
     def __iter__(self) -> object:
         return self
 
+    # ················································································································ #
+    # Creates the main matrix sized according to the informed parameters and filled with zeroes
+    # ················································································································ #
     def newGen(self):
-        newGenerations = []
         for _ in range(self.numGen):
+            # Creates a list filled with zeroes
             eachGen = [0] * self.cellsPerGen
-            newGenerations.append(eachGen)
-        for newGen in newGenerations:
-            self.mainMatrix.append(newGen)
-        self.plantSeed()
+            # Appends the list to the main matrix
+            self.mainMatrix.append(eachGen)
 
+    # ················································································································ #
+    # Print each line of the matrix
+    # ················································································································ #
     def showResults(self):
         for currentLine in self.mainMatrix:
             print(' '.join(map(str, currentLine)))
 
+    # ················································································································ #
+    # Set the middle point of the first line of the matrix to 1
+    # ················································································································ #
     def plantSeed(self):
+        # Discovers the middle point of the first line by dividing it's length by two and rounding the resulting value
         middlePoint = int(round(self.cellsPerGen / 2))
-        self.mainMatrix[0][middlePoint] = 1
+        self.changePoint(0, middlePoint, 1)
 
+    # ················································································································ #
+    # Change the value of one specific point of the matrix
+    # x = x coordinate
+    # y = y coordinate
+    # newValue = New value to be inserted
+    # ················································································································ #
     def changePoint(self, y, x, newValue):
         self.mainMatrix[y][x] = newValue
 
-    def setRule(self, ruleset: dict):
-        self.ruleSet = ruleset
-
+    # ················································································································ #
+    # Reads the selected ruleset and change each cell to 0 and 1 according to it
+    # ················································································································ #
     def create(self):
         if self.ruleSet:
+            # Iterates each line of the matrix
             for row, currentLine in enumerate(self.mainMatrix):
+                # If current line is within 1 of the last it will stop the loop
                 if row == self.numGen - 1:
                     break
+                # Iterates each cell of the current line
                 for column, cell in enumerate(currentLine):
+                    # If current cell is within 2 of the last it skip to the next line
                     if column == self.cellsPerGen - 2:
                         break
+                    # Gets the value of the current cell and the two next ones
                     actualTrio = str(cell) + str(currentLine[column + 1]) + str(currentLine[column + 2])
+                    # Checks if actualTrio is covered by any of the rules, if yes, it gets the matched value
                     newGen = self.ruleSet.get(actualTrio, "Rule not defined")
+                    # Changes the corresponding value of the next line
                     self.changePoint(row + 1, column + 1, newGen)
         else:
             print("Ruleset not defined.")
 
-    def renderGrid(self):
+    # ················································································································ #
+    # Changes the 0 and 1's to ○ and ●
+    # useColors = Pass True if want to use colors, pass False if not
+    # ················································································································ #
+    def renderGrid(self, useColors: bool):
+        # Iterates each line of the matrix
         for row, currentLine in enumerate(self.mainMatrix):
+            # Iterates each cell of the current line
             for column, cell in enumerate(currentLine):
-                newValue = '\33[30m' + '○' + '\33[0m' if cell == 0 else '\33[95m' + '●' + '\33[0m'
+                newValue = ' ' if cell == 0 else '●'
+                if useColors:
+                    # Changes the 0 and 1's to ○ and ● with colors
+                    newValue = '\33[30m' + '○' + '\33[0m' if cell == 0 else '\33[95m' + '●' + '\33[0m'
                 self.changePoint(row, column, newValue)
 
+    # ················································································································ #
+    # Calls all important methods and generate the pattern. It's a shortcut, otherwise the user would have to call each
+    # method individually
+    # ················································································································ #
     def genesis(self):
         self.newGen()
+        self.plantSeed()
         self.create()
-        self.renderGrid()
+        self.renderGrid(False)  # Pass True if want to use colors, pass False if not
         self.showResults()
 
 
-newGeneration = FractalLife(150, 100, 105)
-newGeneration.genesis()
+########################################################################################################################
+# User Interface function - Collects inputs from the users and calls the relevant methods from the FractalLife class
+########################################################################################################################
+def runFractal():
+    # Header
+    print(
+        "\n"
+        "···········································································\n"
+        "······························FRACTAL LIFE·································\n"
+        "···········································································\n"
+        "\n"
+        "\n"
+        "This program simulates the growth of very simple life forms in a 2D matrix.\n"
+        "The matrix is composed by one dimension of time (Y) and a dimension of quantity (Y).\n"
+        "The individuals spawned in one specific generation depends on a set of rules that are applied to the pattern of\n"
+        "distribution of the previous one. The first generation always starts with one individual.\n"
+        "Each set of rules has a combination of 8 different rules. There are a total of 256 sets.\n"
+        "Some of the recommended ruleset are: 105, 109.\n"
+        "In order to run it you have to provide the following three parameters:\n"
+    )
+
+    # Parameters
+    numGen = input("How many times (Y) would you like the simulation to run? ")
+    cellsPerGen = input("How many times (X) beings you want to be possibly generated on each run? ")
+    chosenSeed = input("Which set of rules would you like to use. You can type an integer between 0 and 255: ")
+
+    # Error message
+    invalidInput = "\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\nINVALID " \
+                   "INPUT\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n "
+
+    # Checks if the inputs are numbers
+    if numGen.isnumeric and int(numGen) > 0 and cellsPerGen.isnumeric and int(cellsPerGen) > 0 and chosenSeed.isnumeric and 255 > int(chosenSeed) >= 0:
+
+        # Created instance of the FractalLife class with informed parameters
+        newGeneration = FractalLife(int(numGen), int(cellsPerGen), int(chosenSeed))
+        print(
+            "\n"
+            "···········································································\n"
+            "Here's your results: \n"
+            "···········································································\n"
+        )
+        # Calls the genesis() function that will output the pattern
+        newGeneration.genesis()
+
+        print(
+            "\n"
+            "···········································································\n"
+            "End of simulation: \n"
+            "···········································································\n"
+        )
+        runAgain()
+    else:
+        print(invalidInput)
+        runAgain()
+
+########################################################################################################################
+# Calls the UI function to be executed again and again
+########################################################################################################################
+def runAgain():
+    askRunAgain = input("\nWould you like to try again? \n"
+                        "Please type Y if Yes and N if no: ")
+    if askRunAgain == 'y' or askRunAgain == 'Y':
+        runFractal()
+    else:
+        exit()
+
+
+# Runs the UI function
+runFractal()
