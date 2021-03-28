@@ -1,5 +1,5 @@
 ########################################################################################################################
-# User Interface function - Collects inputs from the users and calls the relevant methods from the FractalLife class
+# Main class FractalLife responsible for generating an auto interfering pattern of dots inside a 2D matrix
 ########################################################################################################################
 class FractalLife:
 
@@ -288,13 +288,6 @@ class FractalLife:
             self.mainMatrix.append(eachGen)
 
     # ················································································································ #
-    # Print each line of the matrix
-    # ················································································································ #
-    def showResults(self):
-        for currentLine in self.mainMatrix:
-            print(' '.join(map(str, currentLine)))
-
-    # ················································································································ #
     # Set the middle point of the first line of the matrix to 1
     # ················································································································ #
     def plantSeed(self):
@@ -351,6 +344,14 @@ class FractalLife:
                 self.changePoint(row, column, newValue)
 
     # ················································································································ #
+    # Print each line of the matrix
+    # ················································································································ #
+
+    def showResults(self):
+        for currentLine in self.mainMatrix:
+            print(' '.join(map(str, currentLine)))
+
+    # ················································································································ #
     # Calls all important methods and generate the pattern. It's a shortcut, otherwise the user would have to call each
     # method individually
     # ················································································································ #
@@ -371,7 +372,7 @@ def runFractal():
         "\n"
         "···········································································\n"
         "······························FRACTAL LIFE·································\n"
-        "···········································································\n"
+        "····························By Ezequias Lopes······························\n"
         "\n"
         "\n"
         "This program simulates the growth of very simple life forms in a 2D matrix.\n"
@@ -413,6 +414,7 @@ def runFractal():
             "···········································································\n"
         )
         runAgain()
+    # This part will only run if there was any kind of error on the input of the parameters
     else:
         print(invalidInput)
         runAgain()
